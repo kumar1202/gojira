@@ -6,7 +6,7 @@
 
 ## Documentation
 
-This post on my blog was the starting point of it all: (Gojira: Building Multi-Region APIOps with Kong)[https://www.kumarabhijeet.me/building-multi-region-kong-apiops]
+This post on my blog was the starting point of it all: [Gojira: Building Multi-Region APIOps with Kong](https://www.kumarabhijeet.me/building-multi-region-kong-apiops)
 
 More detailed docs about the conventions of the framework are yet to follow.
 
