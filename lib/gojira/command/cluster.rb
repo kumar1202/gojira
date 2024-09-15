@@ -8,11 +8,11 @@ module Gojira
       REQUIRED_CLASS_OPTIONS = %i[tls_enabled]
 
       desc "validate", "validates kong config for a cluster"
-      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: true
-      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: true
-      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: true
-      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: true
-      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: true
+      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: false
+      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: false
+      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: false
+      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: false
+      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: false
       def validate
         validate_options
         deck = Gojira::Deck::Gateway.new('deck', get_control_plane)
@@ -23,11 +23,11 @@ module Gojira
       end
   
       desc "diff", "diff output for kong config in a cluster"
-      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: true
-      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: true
-      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: true
-      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: true
-      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: true
+      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: false
+      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: false
+      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: false
+      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: false
+      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: false
       def diff
         validate_options
         deck = Gojira::Deck::Gateway.new('deck', get_control_plane)
@@ -38,11 +38,11 @@ module Gojira
       end
 
       desc "sync", "syncs kong config to a cluster"
-      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: true
-      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: true
-      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: true
-      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: true
-      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: true
+      method_option :kong_state_file, aliases: '-s', type: :string, desc: 'Kong State File', required: false
+      method_option :env_name, aliases: '-n', type: :string, desc: 'Environment identifier name', required: false
+      method_option :compliance_type, aliases: '-c', type: :string, desc: 'Compliance Type', enum: ['pci', 'non-pci'], required: false
+      method_option :cluster_file, aliases: '-f', type: :string, desc: 'Cluster file path', required: false
+      method_option :dc_name, aliases: '-d', type: :string, desc: 'DC Name', required: false
       def sync
         require 'pry'; binding.pry
         validate_options

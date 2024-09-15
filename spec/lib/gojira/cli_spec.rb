@@ -27,7 +27,7 @@ RSpec.describe Gojira::CLI do
       expect_any_instance_of(Gojira::Command::Cluster).to receive(:sync)
       cli.options = {kong_state_file: "state.yaml", env_name: "production", compliance_type: "pci", cluster_file: "clusters.yaml", dc_name: "nm"}
       #require 'pry'; binding.pry
-      cli.invoke('cluster', ["sync --kong-state-file='anc.yaml'"], {kong_state_file: "state.yaml", env_name: "production", compliance_type: "pci", cluster_file: "clusters.yaml", dc_name: "nm"})
+      cli.invoke('cluster', ["sync"], {kong_state_file: "state.yaml", env_name: "production", compliance_type: "pci", cluster_file: "clusters.yaml", dc_name: "nm"})
     end
   end
 
