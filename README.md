@@ -1,5 +1,7 @@
 # Gojira
 
+[![Gem Version](https://badge.fury.io/rb/gojira_apiops.svg)](https://badge.fury.io/rb/gojira_apiops)
+
 **Maintaining order within the Kong realm** [[ref](https://en.wikipedia.org/wiki/Gojira)]
 
 <img src="docs/gojira.png" alt="drawing" width="500"/>

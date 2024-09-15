@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'gojira/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'gojira'
+  spec.name          = 'gojira_apiops'
   spec.version       = Gojira::VERSION
   spec.authors       = ['Kumar Abhijeet']
   spec.email         = ['kumarabhijeet1202@gmail.com']
@@ -17,11 +17,11 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
 
     spec.metadata['homepage_uri'] = spec.homepage
-    spec.metadata['source_code_uri'] = 'https://github.com/PL-infrastructure-platform/gojira/tree/main'
-    spec.metadata['changelog_uri'] = 'https://github.com/PL-infrastructure-platform/gojira/tree/main'
+    spec.metadata['source_code_uri'] = 'https://github.com/kumar1202/gojira/tree/main'
+    spec.metadata['changelog_uri'] = 'https://github.com/kumar1202/gojira/tree/main'
   else
     raise 'RubyGems 2.0 or newer is required to protect against ' \
       'public gem pushes.'
