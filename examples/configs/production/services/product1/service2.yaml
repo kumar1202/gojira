@@ -1,0 +1,19 @@
+services:
+  - connect_timeout: 60000
+    host: service.upstream
+    name: lounge-backend
+    port: 443
+    protocol: https
+    tags:
+      - pci
+    path: "/"
+    routes:
+      - hosts:
+          - https://service.com
+        name: service-backend
+        paths:
+          - "/api"
+        preserve_host: true
+        methods:
+          - "GET"
+
