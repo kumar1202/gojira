@@ -12,3 +12,4 @@ local/
 # rspec failure tracking
 .rspec_status
 test-files/
+.DS_Store
