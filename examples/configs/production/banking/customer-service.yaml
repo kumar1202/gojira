@@ -1,0 +1,21 @@
+services:
+  - name: customer-api
+    host: customer.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 30000
+    tags:
+      - non-pci      # No payment data handled
+      - external     # Customer-facing
+      - banking      # Business domain
+    routes:
+      - name: customer-public
+        hosts:
+          - api.bank.com
+        paths:
+          - /api/v1/customers
+          - /api/v1/accounts
+        methods:
+          - GET
+          - PUT
+        strip_path: false

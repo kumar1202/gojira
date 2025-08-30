@@ -1,0 +1,62 @@
+# Example showing custom compliance tags beyond pci/non-pci
+
+# Service with 'internal' tag
+services:
+  - name: internal-api
+    host: internal.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 60000
+    tags:
+      - internal  # Custom tag for internal-only services
+    routes:
+      - name: internal-api-route
+        hosts:
+          - internal-api.company.local
+        paths:
+          - /api/v1
+        methods:
+          - GET
+          - POST
+
+---
+# Service with 'public' tag
+services:
+  - name: public-api
+    host: public.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 60000
+    tags:
+      - public  # Custom tag for public-facing services
+    routes:
+      - name: public-api-route
+        hosts:
+          - api.company.com
+        paths:
+          - /public/v1
+        methods:
+          - GET
+
+---
+# Service with multiple tags
+services:
+  - name: partner-api
+    host: partner.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 60000
+    tags:
+      - partner     # Primary compliance tag
+      - external    # Additional tags for categorization
+      - b2b
+    routes:
+      - name: partner-api-route
+        hosts:
+          - partner.company.com
+        paths:
+          - /partner/v1
+        methods:
+          - GET
+          - POST
+          - PUT

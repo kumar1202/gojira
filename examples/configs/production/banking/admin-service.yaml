@@ -1,0 +1,22 @@
+services:
+  - name: admin-portal
+    host: admin.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 30000
+    tags:
+      - internal     # Internal-only access
+      - admin        # Administrative functions
+      - banking      # Business domain
+    routes:
+      - name: admin-dashboard
+        hosts:
+          - admin.bank.internal
+        paths:
+          - /dashboard
+          - /api/admin
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE

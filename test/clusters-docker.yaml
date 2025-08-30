@@ -1,0 +1,17 @@
+dev:
+  dc:
+    - delhi
+    - mumbai
+  control_plane:
+    - compliance_type: pci
+      dc: delhi
+      address: http://localhost:8001
+    - compliance_type: non-pci
+      dc: delhi
+      address: http://localhost:8011
+    - compliance_type: pci
+      dc: mumbai
+      address: http://localhost:8021
+    - compliance_type: non-pci
+      dc: mumbai
+      address: http://localhost:8031

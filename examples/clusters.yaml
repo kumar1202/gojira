@@ -1,0 +1,46 @@
+production:
+  dc:
+    - delhi
+    - mumbai
+  control_plane:
+    - compliance_type: pci
+      dc: delhi
+      address: https://kong-pci.delhi.example.com:8001
+    - compliance_type: non-pci
+      dc: delhi
+      address: https://kong-nonpci.delhi.example.com:8001
+    - compliance_type: pci
+      dc: mumbai
+      address: https://kong-pci.mumbai.example.com:8001
+    - compliance_type: non-pci
+      dc: mumbai
+      address: https://kong-nonpci.mumbai.example.com:8001
+
+uat:
+  dc:
+    - delhi
+    - mumbai
+  control_plane:
+    - compliance_type: pci
+      dc: delhi
+      address: https://kong-pci-uat.delhi.example.com:8001
+    - compliance_type: non-pci
+      dc: delhi
+      address: https://kong-nonpci-uat.delhi.example.com:8001
+    - compliance_type: pci
+      dc: mumbai
+      address: https://kong-pci-uat.mumbai.example.com:8001
+    - compliance_type: non-pci
+      dc: mumbai
+      address: https://kong-nonpci-uat.mumbai.example.com:8001
+
+dev:
+  dc:
+    - delhi
+  control_plane:
+    - compliance_type: pci
+      dc: delhi
+      address: https://kong-pci-dev.delhi.example.com:8001
+    - compliance_type: non-pci
+      dc: delhi
+      address: https://kong-nonpci-dev.delhi.example.com:8001

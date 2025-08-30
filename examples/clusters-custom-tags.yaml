@@ -1,0 +1,60 @@
+# Example cluster configuration with custom compliance types
+
+production:
+  dc:
+    - delhi
+    - mumbai
+    - singapore
+  control_plane:
+    # Traditional PCI/Non-PCI setup
+    - compliance_type: pci
+      dc: delhi
+      address: https://kong-pci.delhi.example.com:8001
+    - compliance_type: non-pci
+      dc: delhi
+      address: https://kong-nonpci.delhi.example.com:8001
+    
+    # Custom compliance types
+    - compliance_type: internal
+      dc: delhi
+      address: https://kong-internal.delhi.example.com:8001
+    - compliance_type: public
+      dc: delhi
+      address: https://kong-public.delhi.example.com:8001
+    - compliance_type: partner
+      dc: delhi
+      address: https://kong-partner.delhi.example.com:8001
+    
+    # Mumbai with different compliance zones
+    - compliance_type: pci
+      dc: mumbai
+      address: https://kong-pci.mumbai.example.com:8001
+    - compliance_type: non-pci
+      dc: mumbai
+      address: https://kong-nonpci.mumbai.example.com:8001
+    - compliance_type: dmz
+      dc: mumbai
+      address: https://kong-dmz.mumbai.example.com:8001
+    
+    # Singapore with regional compliance
+    - compliance_type: apac-regulated
+      dc: singapore
+      address: https://kong-regulated.singapore.example.com:8001
+    - compliance_type: apac-standard
+      dc: singapore
+      address: https://kong-standard.singapore.example.com:8001
+
+dev:
+  dc:
+    - local
+  control_plane:
+    # Development can have simplified compliance types
+    - compliance_type: secure
+      dc: local
+      address: http://localhost:8001
+    - compliance_type: standard
+      dc: local
+      address: http://localhost:8011
+    - compliance_type: test
+      dc: local
+      address: http://localhost:8021

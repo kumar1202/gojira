@@ -1,0 +1,29 @@
+payment.upstream:
+  - delhi:
+      - host: payment-1.delhi.bank.internal
+        weight: 50
+      - host: payment-2.delhi.bank.internal
+        weight: 50
+  - mumbai:
+      - host: payment-1.mumbai.bank.internal
+        weight: 50
+      - host: payment-2.mumbai.bank.internal
+        weight: 50
+
+customer.upstream:
+  - delhi:
+      - host: customer.delhi.bank.internal
+        weight: 100
+  - mumbai:
+      - host: customer-1.mumbai.bank.internal
+        weight: 60
+      - host: customer-2.mumbai.bank.internal
+        weight: 40
+
+admin.upstream:
+  - delhi:
+      - host: admin.delhi.bank.internal
+        weight: 100
+  - mumbai:
+      - host: admin.mumbai.bank.internal
+        weight: 100

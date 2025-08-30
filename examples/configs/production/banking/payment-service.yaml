@@ -1,0 +1,23 @@
+services:
+  - name: payment-gateway
+    host: payment.upstream
+    port: 443
+    protocol: https
+    connect_timeout: 60000
+    read_timeout: 60000
+    write_timeout: 60000
+    tags:
+      - pci          # Required for payment processing
+      - critical     # High-priority service
+      - banking      # Business domain
+    routes:
+      - name: payment-processing
+        hosts:
+          - payments.bank.com
+        paths:
+          - /api/v1/payments
+          - /api/v1/transactions
+        methods:
+          - POST
+          - GET
+        preserve_host: true
